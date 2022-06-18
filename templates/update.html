@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        border: 8px outset;
+        border-radius: 10px;
+        border-spacing: 10px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+</style>
+<body>
+    <h2 style="text-align:center"> Update details of Product </h2>
+        <form method="POST">
+            {% csrf_token %}
+            <table style="width:50%" align="center">
+                <tr>
+                    <td>Product Id</td>
+                    <td><input type="text" value="{{ products.ProductID }}" name= "ProductId"></td>
+                </tr>
+                <tr>
+                    <td>Product Name</td>
+                    <td><input type=" text" value="{{ products.ProductName }}" name= "ProductName"></td>
+                </tr>
+                <tr>
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
+                </tr>
+            </table>
+        </form>
+
+</body>
+</html>

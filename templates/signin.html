@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+</head>
+<body>
+    <form method="post" class="form-group">
+        {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input type="text" class="form-control" name = "username" aria-describedby="emailHelp">
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name ="password">
+  </div>
+
+      {% for message in messages %}
+        <p id ="messages">{{ message }}</p>
+      {% endfor %}
+  <button type="submit" class="btn btn-primary">Submit</button>
+    <br>
+      Don't have an account? <a href="{% url 'signup' %}" >Sign Up</a>
+    </form>
+</body>
+</html>

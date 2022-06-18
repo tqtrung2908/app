@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Sign Up</h3>
+
+    <form action ="signup" method="post">
+    {% csrf_token %}
+        <label for ="">Username</label>
+        {{ form.username }}
+        <br>
+
+        <label for ="">Email address</label>
+        {{ form.email }}
+        <br>
+
+        <label for ="">Password</label>
+        {{ form.password1}}
+        <br>
+
+        <label for ="">Confirm your password</label>
+         {{ form.password2 }}
+        <br>
+
+        <input type ="submit" name = "Create User">
+        {{ form.errors }}
+        <br>
+        Already have an account? <a href="{% url 'signin' %}" >Sign In</a>
+    </form>
+
+</body>
+</html>
